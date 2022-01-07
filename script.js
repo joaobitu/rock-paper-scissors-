@@ -19,16 +19,16 @@ container.appendChild(results);
 container.appendChild(score);
 
 function computerPlay() {
-    let randomizer = Math.random()
+    let randomizer = Math.random();
     if (randomizer < 0.333) {
-        computerChoice.textContent = "The PC chose rock";
-        return rock;
+            computerChoice.textContent = "The PC chose rock";
+             return rock;
     } else if (randomizer > 0.666) {
-        computerChoice.textContent = "The PC chose paper"
-        return paper;
+            computerChoice.textContent = "The PC chose paper"
+                return paper;
     } else {
-        computerChoice.textContent = "The PC chose scissors"
-        return scissors;
+            computerChoice.textContent = "The PC chose scissors"
+             return scissors;
     }
 }
 function userPlay() {
@@ -44,18 +44,18 @@ function userPlay() {
 
 function round(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
-        results.textContent = "It's a tie!" ;
+            results.textContent = "It's a tie!" ;
     } else if ((playerSelection == rock) && (computerSelection == scissors)) {
-        results.textContent = "You won! Rock beats Scissors" ;
+            results.textContent = "You won! Rock beats Scissors" ;
         return win++
     } else if ((playerSelection == scissors) && (computerSelection == paper)) {
-        results.textContent = "You won! Scissors beat Paper";
+            results.textContent = "You won! Scissors beat Paper";
         return win++
     } else if ((playerSelection == paper) && (computerSelection == rock)) {
-        results.textContent = "You won! Paper beats Rock";
+            results.textContent = "You won! Paper beats Rock";
         return win++
     } else {
-        results.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+            results.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
         return lose++
     }
 }
@@ -67,38 +67,39 @@ function game(){
     
     round(userPlay(), computerPlay());
     score2();
-    if (rounds == 5){
-    if (win > lose) {
-      score.textContent =  `You ${win} - Computer ${lose} - Congratulations! You won!` ;
-    } else if (win == lose){
-      score.textContent = `You ${win} - Computer ${lose} -Its a tie! heeey`;
-    } else {
-      score.textContent = `You ${win} - Computer ${lose} - You lose! Better luck next time!`;
-    }}
+    if (rounds % 5 == 0){
+        if (win > lose) {
+             score.textContent =  `You ${win} - Computer ${lose} - Congratulations! You won!` ;
+        } else if (win == lose){
+             score.textContent = `You ${win} - Computer ${lose} -Its a tie! heeey`;
+        } else {
+             score.textContent = `You ${win} - Computer ${lose} - You lose! Better luck next time!`;
+         }
+}
  
 
 }
 
 
 
-rockButton.addEventListener('click', () =>{
-  choice = 'rock';
-  rounds++;
-  console.log(rounds);
-  game();
-})
+    rockButton.addEventListener('click', () =>{
+        choice = 'rock';
+        rounds++;
+        console.log(rounds);
+        game();
+    })
 
-paperButton.addEventListener('click', () =>{
-  choice = 'paper';
-  rounds++;
-  console.log(rounds);
+    paperButton.addEventListener('click', () =>{
+        choice = 'paper';
+        rounds++;
+        console.log(rounds);
 
-  game();
-})
+        game();
+    })
 
-scissorsButton.addEventListener('click', () =>{
-  choice = 'scissors';
-  rounds++;
-  console.log(rounds);
-  game();
-})
+    scissorsButton.addEventListener('click', () =>{
+        choice = 'scissors';
+        rounds++;
+        console.log(rounds);
+        game();
+    })
