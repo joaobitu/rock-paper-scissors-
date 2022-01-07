@@ -2,79 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script>
-        const rock = 'Rock';
-        const paper = 'Paper';
-        const scissors = 'Scissors';
-        let win = 0;
-        let lose = 0;
+    <script src="script.js" defer>
         
-        function computerPlay(){
-            if (Math.random() < 0.333) {
-                console.log(rock); 
-                return rock;
-            } else if (Math.random() > 0.666) {
-                console.log(paper);
-                return paper;
-            } else {
-                console.log(scissors);
-                return scissors;
-            }
-        }
-        function userPlay() {
-           let userInput = window.prompt("Pick between rock paper or Scissors");
-           userInput = userInput.toLowerCase();
-                if (userInput == "rock"){
-                    return rock;
-                } else if (userInput == "paper") {
-                    return paper;
-                } else {
-                    return scissors;
-                } 
-        }
-
-        function round(playerSelection, computerSelection){
-            if (playerSelection == computerSelection){
-                console.log("It's a tie!");
-            } else if ((playerSelection == rock) && (computerSelection == scissors)) {
-                console.log("You won! Rock beats Scissors");
-                return win++
-            } else if ((playerSelection == scissors) && (computerSelection == paper)) {
-                console.log("You won! Scissors beat Paper");
-                return win++
-            } else if ((playerSelection == paper) && (computerSelection == rock)) {
-                console.log("You won! Paper beats Rock");
-                return win++
-            } else {
-                console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
-                return lose++
-            }
-        }
-
-        function game(){
-          
-            function score() {
-                console.log(`You ${win} - Computer ${lose}`)
-            }
-            for (let i = 0; i < 5; i++){
-                round(userPlay(), computerPlay());
-                score();
-            }
-            if (win > lose) {
-                console.log("Congratulations! You won!");
-            } else if (win == lose){
-                console.log("Its a tie! heeey");
-            } else {
-                console.log("You lose! Better luck next time!")
-            }
-
-        }
-        game();
-
     </script>
     <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-    
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+    <main id="main"></main>
 </body>
 </html>
