@@ -19,10 +19,11 @@ container.appendChild(results);
 container.appendChild(score);
 
 function computerPlay() {
-    if (Math.random() < 0.333) {
+    let randomizer = Math.random()
+    if (randomizer < 0.333) {
         computerChoice.textContent = "The PC chose rock";
         return rock;
-    } else if (Math.random() > 0.666) {
+    } else if (randomizer > 0.666) {
         computerChoice.textContent = "The PC chose paper"
         return paper;
     } else {
