@@ -70,16 +70,19 @@ function game(){
     if (rounds % 5 == 0){
         if (win > lose) {
              score.textContent =  `You ${win} - Computer ${lose} - Congratulations! You won!` ;
-             win, lose = 0;
+            win = 0;
+            lose = 0;
         } else if (win == lose){
              score.textContent = `You ${win} - Computer ${lose} -Its a tie! heeey`;
-             win, lose = 0;
+             win = 0;
+             lose = 0;
         } else {
              score.textContent = `You ${win} - Computer ${lose} - You lose! Better luck next time!`;
-             win, lose = 0;
+             win = 0;
+             lose = 0;
          }
          
-}
+} //hello
  
 
 }
